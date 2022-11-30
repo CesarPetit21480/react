@@ -1,6 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import NavBar from "./component/NabBar/NavBar";
+import ItemListContainer from "./component/ItemListContainer/ItemListContainer"
 
 
 function App() {
@@ -8,6 +9,11 @@ function App() {
     <div className="App">
     
       <NavBar/>
+
+      <ItemListContainer
+        bienvenida = {"BIENVENIDO AL PROYECTO"}
+        nombre = {"CESAR PETIT"}      
+      />
      
   
     
