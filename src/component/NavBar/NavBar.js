@@ -1,15 +1,16 @@
 import React from "react";
 import "./css/Nabvar.css";
 import CartWidget from "../CartWidget/CartWidget.jsx";
+import {NavLink} from "react-router-dom"
 
-<com></com>;
+
 const NavBar = () => {
   return ( 
       <nav className="navbar navbar-expand-lg navPropio">
         <div className="container-fluid">
-          <a className="navbar-brand listaPropia" href="#">
+          <NavLink className="navbar-brand listaPropia" to="/">
             Principal
-          </a>
+          </NavLink>
           <button
             className="navbar-toggler"
             type="button"
@@ -24,16 +25,16 @@ const NavBar = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0 ">
               <li className="nav-item ">
-                <a className="nav-link listaPropia" aria-current="page" href="#">
+                <NavLink to="./" className="nav-link listaPropia" aria-current="page">
                   Zapatillas
-                </a>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link listaPropia" href="#">
+                <NavLink to="./counter" className="nav-link listaPropia" href="#">
                   Remeras
-                </a>
+                </NavLink>
               </li>    
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <a className="nav-link listaPropia" href="#">
                   Pantalones
                 </a>
@@ -42,7 +43,7 @@ const NavBar = () => {
                 <a className="nav-link listaPropia" href="#">
                   Short
                 </a>
-              </li>      
+              </li>       */}
             </ul>
             <form className="d-flex" role="search">
               <CartWidget />
