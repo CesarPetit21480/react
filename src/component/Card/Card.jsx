@@ -1,44 +1,23 @@
-import axios from "axios";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import data from "../../json/data.json";
-
+import { Link } from "react-router-dom";
 const Card = (props) => {
-  const [datos, setDatos] = useState([]);
-const {cate} = props;
+  const { id, categoria, img, description } = props;
 
-console.log("la CATEGORIA", cate);
-  
 
-  const getProduct = () => {
-    const getData = new Promise((resolve, reject) => {
-      resolve({
-        status: 200,
-        data: data.productos,
-      });
-      reject(console.log("error Carga"));
-    });
+  console.log("categoria card", categoria, img, description);
 
-    getData
-      .then((resultado) => {
-        setDatos(resultado.data);
-      })
-      .catch((error) => {
-        console.log("error Carga", error);
-      });
-  };
-
-  useEffect(() => {
-    getProduct();
-
-    return () => {
-      setDatos([]);
-    };
-  }, []);
-
-  const pp = datos.filter((p) => p.categoria === "zapatillas");
-
-  return <div>card</div>;
+ 
+  return (
+    <div class="d-flex justify-content-center">
+      <Link class="card">
+        <img className="card-img-top" src={img} alt="Card image cap" />
+        <div className="card-body">
+          <h5 className="card-title">{categoria}</h5>
+          <p className="card-text">{description}</p>
+        </div>
+      </Link>
+    </div>
+  );
 };
 
 export default Card;

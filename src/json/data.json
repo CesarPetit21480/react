@@ -49,25 +49,25 @@
         },
         {
             "id": 9,
-            "categoria": "elementos",
+            "categoria": "elemento",
             "img": "../image/rodillera.png",
             "description": "ZAPATILLAS UNDER ARMOUR CHARGED SLIGHT PARA HOMBRE"
         },
         {
             "id": 10,
-            "categoria": "elementos",
+            "categoria": "elemento",
             "img": "../image/soga.png",
             "description": "Soga Saltar Speed Rope Mangos Aluminio Cabezal 360° Crossfit"
         },
         {
             "id": 11,
-            "categoria": "elementos",
+            "categoria": "elemento",
             "img": "../image/mancuerna.png",
             "description": "Soga Saltar Speed Rope Mangos Aluminio Cabezal 360° Crossfit"
         },
         {
             "id": 12,
-            "categoria": "elementos",
+            "categoria": "elemento",
             "img": "../image/calleras.png",
             "description": "Soga Saltar Speed Rope Mangos Aluminio Cabezal 360° Crossfit"
         }

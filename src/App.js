@@ -27,7 +27,7 @@ function App() {
             }
           />
           <Route
-            path="/item/:categoria"
+            path="/item/:cat"
             element={
               <ItemListContainer
               bienvenida="BIENVENIDO AL PROYECTO"

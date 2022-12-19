@@ -25,35 +25,20 @@ const NavBar = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0 ">
               <li className="nav-item ">
-                <NavLink to="/item/zapatillas" className="nav-link listaPropia" aria-current="page">
+                <NavLink to="/item/zapatilla" className="nav-link listaPropia" aria-current="page">
                   Zapatillas
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink to="/counter" className="nav-link listaPropia" href="#">
+                <NavLink to="/item/remera" className="nav-link listaPropia" href="#">
                   Remeras
                 </NavLink>
-              </li>
+              </li>             
               <li className="nav-item">
-                <NavLink to="/counter" className="nav-link listaPropia" href="#">
-                  Short
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink to="/counter" className="nav-link listaPropia" href="#">
+                <NavLink to="/item/elemento" className="nav-link listaPropia" href="#">
                   Elementos
                 </NavLink>
-              </li> 
-              {/* <li className="nav-item">
-                <a className="nav-link listaPropia" href="#">
-                  Pantalones
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link listaPropia" href="#">
-                  Short
-                </a>
-              </li>       */}
+              </li>           
             </ul>
             <form className="d-flex" role="search">
               <CartWidget />
