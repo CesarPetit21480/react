@@ -1,0 +1,75 @@
+{
+    "productos": [{
+            "id": 1,
+            "categoria": "remera",
+            "img": "../image/remera_1.png",
+            "description": "Remera Entrenamiento Camiseta Running Crossfit Tiempo Libre"
+        },
+        {
+            "id": 2,
+            "categoria": "remera",
+            "img": "../image/remera_2.png",
+            "description": "Remera Entrenamiento Camiseta Running Crossfit Tiempo Libre"
+        },
+        {
+            "id": 3,
+            "categoria": "remera",
+            "img": "../image/remera_3.png",
+            "description": "Remera Entrenamiento Camiseta Running Crossfit Tiempo Libre"
+        },
+        {
+            "id": 4,
+            "categoria": "remera",
+            "img": "../image/remera_4.png",
+            "description": "Remera Entrenamiento Camiseta Running Crossfit Tiempo Libre"
+        },
+        {
+            "id": 5,
+            "categoria": "zapatilla",
+            "img": "../image/zapatilla_5.png",
+            "description": "ZAPATILLAS UNDER ARMOUR CHARGED SLIGHT PARA HOMBRE "
+        },
+        {
+            "id": 6,
+            "categoria": "zapatilla",
+            "img": "../image/zapatilla_6.png",
+            "description": "ZAPATILLAS UNDER ARMOUR CHARGED SLIGHT PARA HOMBRE"
+        },
+        {
+            "id": 7,
+            "categoria": "zapatilla",
+            "img": "../image/zapatilla_7.png",
+            "description": "ZAPATILLAS UNDER ARMOUR CHARGED SLIGHT PARA HOMBRE"
+        },
+        {
+            "id": 8,
+            "categoria": "zapatilla",
+            "img": "../image/zapatilla3.png",
+            "description": "ZAPATILLAS UNDER ARMOUR CHARGED SLIGHT PARA HOMBRE"
+        },
+        {
+            "id": 9,
+            "categoria": "elementos",
+            "img": "../image/rodillera.png",
+            "description": "ZAPATILLAS UNDER ARMOUR CHARGED SLIGHT PARA HOMBRE"
+        },
+        {
+            "id": 10,
+            "categoria": "elementos",
+            "img": "../image/soga.png",
+            "description": "Soga Saltar Speed Rope Mangos Aluminio Cabezal 360° Crossfit"
+        },
+        {
+            "id": 11,
+            "categoria": "elementos",
+            "img": "../image/mancuerna.png",
+            "description": "Soga Saltar Speed Rope Mangos Aluminio Cabezal 360° Crossfit"
+        },
+        {
+            "id": 12,
+            "categoria": "elementos",
+            "img": "../image/calleras.png",
+            "description": "Soga Saltar Speed Rope Mangos Aluminio Cabezal 360° Crossfit"
+        }
+    ]
+}

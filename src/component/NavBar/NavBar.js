@@ -33,7 +33,17 @@ const NavBar = () => {
                 <NavLink to="./counter" className="nav-link listaPropia" href="#">
                   Remeras
                 </NavLink>
-              </li>    
+              </li>
+              <li className="nav-item">
+                <NavLink to="./counter" className="nav-link listaPropia" href="#">
+                  Short
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink to="./counter" className="nav-link listaPropia" href="#">
+                  Elementos
+                </NavLink>
+              </li> 
               {/* <li className="nav-item">
                 <a className="nav-link listaPropia" href="#">
                   Pantalones
