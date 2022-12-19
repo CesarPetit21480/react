@@ -1,59 +1,42 @@
 import axios from "axios";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import data from "../../json/data.json";
 
-const Card = () => {
-  const { categoria } = useParams;
+const Card = (props) => {
   const [datos, setDatos] = useState([]);
+const {cate} = props;
 
-  // async function getData() {
-  //   try {
-  //     // const result = await axios.get(data);     
-  //     await setDatos(data);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // }
-  // getData();
+console.log("la CATEGORIA", cate);
+  
 
-useEffect(() => {
+  const getProduct = () => {
+    const getData = new Promise((resolve, reject) => {
+      resolve({
+        status: 200,
+        data: data.productos,
+      });
+      reject(console.log("error Carga"));
+    });
 
-    setDatos(data.productos);
+    getData
+      .then((resultado) => {
+        setDatos(resultado.data);
+      })
+      .catch((error) => {
+        console.log("error Carga", error);
+      });
+  };
 
-  return () => {
+  useEffect(() => {
+    getProduct();
 
-  }
-}, [])
+    return () => {
+      setDatos([]);
+    };
+  }, []);
 
-console.log(datos);
-
-
-const pp = datos.filter(p => p.id === 1)
-
-console.log('hola',pp)
-
-
-
-
-
-
-  // const getProduct = () => {
-  //   const getData = new Promise((resolve, reject) => {
-  //     setTimeout(() => {
-  //       resolve({
-  //         status: 200,
-  //         data: data.productos,
-  //       });
-  //     }, 1000);
-  //   });
-  // };
-
-  // const p1 = new producto(1,"pantalon","shor","img");
-
-  const { cards, setcards } = useState([]);
-  // setcards(p1);
-  // console.log(cards);
+  const pp = datos.filter((p) => p.categoria === "zapatillas");
 
   return <div>card</div>;
 };

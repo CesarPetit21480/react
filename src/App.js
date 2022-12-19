@@ -20,9 +20,9 @@ function App() {
             path="/"
             element={
               <ItemListContainer
-                bienvenida={"BIENVENIDO AL PROYECTO"}
-                nombre={"CESAR PETIT"}
-                descripcion={"Listado Productos"}
+                bienvenida="BIENVENIDO AL PROYECTO"
+                nombre="CESAR PETIT"
+                descripcion="Listado Productos"
               />
             }
           />
@@ -30,10 +30,10 @@ function App() {
             path="/item/:categoria"
             element={
               <ItemListContainer
-                bienvenida={"BIENVENIDO AL PROYECTO"}
-                nombre={"CESAR PETIT"}
-                descripcion={"Listado Productos"}
-              />
+              bienvenida="BIENVENIDO AL PROYECTO"
+              nombre="CESAR PETIT"
+              descripcion="Listado Productos"
+              />              
             }
           />
           <Route path="/counter" element={<Counter />} />
