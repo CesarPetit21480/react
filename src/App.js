@@ -10,11 +10,19 @@ import NavBar from "./component/NavBar/NavBar";
 function App() {
   const [show, setshow] = useState(false);
 
+
+  const [carrito, setCarrito] = useState([]);
+  const [count, setcount] = useState(0)
+
+const addCarrito = () => {  
+  //setCarrito([...carrito, item])
+  setcount(count + 1);
+}
   return (
     <div className="App">
    
       <Router>
-        <NavBar />
+        <NavBar count = {count} />
         <Routes>
           <Route
             path="/"
@@ -36,7 +44,7 @@ function App() {
             }
           />
           <Route path="/counter" element={<Counter />} />
-          <Route path="/item/detail/:id" element={<ItemDetailContainer />} />
+          <Route path="/item/detail/:id" element={<ItemDetailContainer addCarrito = {addCarrito} />} />
           <Route path="*" element={<Error404 />} />
         </Routes>
       </Router>

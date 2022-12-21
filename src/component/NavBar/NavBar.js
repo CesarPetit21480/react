@@ -4,7 +4,9 @@ import CartWidget from "../CartWidget/CartWidget.jsx";
 import {NavLink} from "react-router-dom"
 
 
-const NavBar = () => {
+const NavBar = (props) => {
+
+  const {count} = props;
   return ( 
       <nav className="navbar navbar-expand-lg navPropio">
         <div className="container-fluid">
@@ -41,7 +43,7 @@ const NavBar = () => {
               </li>           
             </ul>
             <form className="d-flex" role="search">
-              <CartWidget />
+              <CartWidget count = {count} />
             </form>
           </div>
         </div>

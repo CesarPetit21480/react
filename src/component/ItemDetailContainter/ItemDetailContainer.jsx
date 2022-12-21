@@ -4,9 +4,11 @@ import data from "../../json/data.json";
 import ItemDetail from "../ItemDetail/ItemDetail";
 const imgRoutes = require.context("../../assets/productos", true);
 
-const ItemDetailContainer = () => {
+const ItemDetailContainer = (props) => {
   const [item, setItem] = useState(null);
   const { id } = useParams();
+  const {addCarrito} = props;
+  
   const getProduct = () => {
     const getData = new Promise((resolve, reject) => {
       resolve({
@@ -35,9 +37,9 @@ const ItemDetailContainer = () => {
     };
   }, []);
 
-  console.log('i',item);
 
-  return <div>{item ? <ItemDetail item={item} /> : <h1>Cargando...</h1>}</div>;
+
+  return <div>{item ? <ItemDetail item={item} addCarrito={addCarrito} /> : <h1>Cargando...</h1>}</div>;
 
 };
 

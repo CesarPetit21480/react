@@ -4,7 +4,7 @@ import "./ItemDetail.css";
 const imgRoutes = require.context("../../assets/productos", true);
 
 const ItemDetail = (props) => {
-  const { item } = props;
+  const { item,addCarrito } = props;
   const { categoria, img, description, precio } = item;
   const [count, setCount] = useState(1);
 
@@ -37,7 +37,7 @@ const ItemDetail = (props) => {
             </button>
           </div>
           <div>
-            <button className="btn btn-dark">Agregar Al Carrito</button>
+            <button onClick={addCarrito} className="btn btn-dark">Agregar Al Carrito</button>
           </div>
         </div>
       </div>
