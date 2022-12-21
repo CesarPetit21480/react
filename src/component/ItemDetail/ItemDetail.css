@@ -1,0 +1,12 @@
+.inpt {
+    width: 3rem;
+    height: 3rem;
+    padding: auto;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    font-size: large;
+    font-weight: bold;
+    ;
+    text-align: center;
+    border: solid 1px black;
+}

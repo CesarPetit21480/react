@@ -1,75 +1,89 @@
 {
     "productos": [{
             "id": 1,
-            "categoria": "remera",
-            "img": "../image/remera_1.png",
-            "description": "Remera Entrenamiento Camiseta Running Crossfit Tiempo Libre"
+            "categoria": "remeras",
+            "img": "./remera_1.png",
+            "description": "remeras Entrenamiento Camiseta Running Crossfit Tiempo Libre",
+            "precio": 3000
+
         },
+
         {
             "id": 2,
-            "categoria": "remera",
-            "img": "../image/remera_2.png",
-            "description": "Remera Entrenamiento Camiseta Running Crossfit Tiempo Libre"
+            "categoria": "remeras",
+            "img": "./remera_2.png",
+            "description": "remeras Mono divertido",
+            "precio": 2500
         },
         {
             "id": 3,
-            "categoria": "remera",
-            "img": "../image/remera_3.png",
-            "description": "Remera Entrenamiento Camiseta Running Crossfit Tiempo Libre"
+            "categoria": "remeras",
+            "img": "./remera_3.png",
+            "description": "remeras Dragon Ball",
+            "precio": 1500
         },
         {
             "id": 4,
-            "categoria": "remera",
-            "img": "../image/remera_4.png",
-            "description": "Remera Entrenamiento Camiseta Running Crossfit Tiempo Libre"
+            "categoria": "remeras",
+            "img": "./remera_4.png",
+            "description": "remeras Anteojos chetos",
+            "precio": 4800
         },
         {
             "id": 5,
-            "categoria": "zapatilla",
-            "img": "../image/zapatilla_5.png",
-            "description": "ZAPATILLAS UNDER ARMOUR CHARGED SLIGHT PARA HOMBRE "
+            "categoria": "zapatillas",
+            "img": "./zapatilla_1.png",
+            "description": "ZAPATILLAS UNDER ARMOUR CHARGED SLIGHT PARA HOMBRE ",
+            "precio": 35000
         },
         {
             "id": 6,
-            "categoria": "zapatilla",
-            "img": "../image/zapatilla_6.png",
-            "description": "ZAPATILLAS UNDER ARMOUR CHARGED SLIGHT PARA HOMBRE"
+            "categoria": "zapatillas",
+            "img": "./zapatilla_2.png",
+            "description": "zapatillasS UNDER ARMOUR CHARGED SLIGHT PARA HOMBRE",
+            "precio": 25000
         },
         {
             "id": 7,
-            "categoria": "zapatilla",
-            "img": "../image/zapatilla_7.png",
-            "description": "ZAPATILLAS UNDER ARMOUR CHARGED SLIGHT PARA HOMBRE"
+            "categoria": "zapatillas",
+            "img": "./zapatilla_3.png",
+            "description": "zapatillasS UNDER ARMOUR CHARGED SLIGHT PARA HOMBRE",
+            "precio": 28000
         },
         {
             "id": 8,
-            "categoria": "zapatilla",
-            "img": "../image/zapatilla3.png",
-            "description": "ZAPATILLAS UNDER ARMOUR CHARGED SLIGHT PARA HOMBRE"
+            "categoria": "zapatillas",
+            "img": "./zapatilla_4.png",
+            "description": "zapatillasS UNDER ARMOUR CHARGED SLIGHT PARA HOMBRE",
+            "precio": 30000
         },
         {
             "id": 9,
-            "categoria": "elemento",
-            "img": "../image/rodillera.png",
-            "description": "ZAPATILLAS UNDER ARMOUR CHARGED SLIGHT PARA HOMBRE"
+            "categoria": "elementos",
+            "img": "./elemento_1.png",
+            "description": "Soga Saltar Speed Rope Mangos Aluminio Cabezal 360° Crossfit",
+            "precio": 3500
         },
         {
             "id": 10,
-            "categoria": "elemento",
-            "img": "../image/soga.png",
-            "description": "Soga Saltar Speed Rope Mangos Aluminio Cabezal 360° Crossfit"
+            "categoria": "elementos",
+            "img": "./elemento_2.png",
+            "description": "Calleras Wod Originales Color Negro Crossfit Calistenia",
+            "precio": 1700
         },
         {
             "id": 11,
-            "categoria": "elemento",
-            "img": "../image/mancuerna.png",
-            "description": "Soga Saltar Speed Rope Mangos Aluminio Cabezal 360° Crossfit"
+            "categoria": "elementos",
+            "img": "./elemento_3.png",
+            "description": "Rodilleras 7mm Neoprene Para Levantamiento De Pesas Crossfit",
+            "precio": 4500
         },
         {
             "id": 12,
-            "categoria": "elemento",
-            "img": "../image/calleras.png",
-            "description": "Soga Saltar Speed Rope Mangos Aluminio Cabezal 360° Crossfit"
+            "categoria": "elementos",
+            "img": "./elemento_4.png",
+            "description": "Mancuernas Hexagonales Gadnic Fit 10KG Goma 20kg Totales",
+            "precio": 35000
         }
     ]
 }

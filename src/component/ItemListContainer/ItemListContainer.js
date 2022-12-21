@@ -11,6 +11,9 @@ const {bienvenida,nombre,descripcion} = props;
 const { cat } = useParams();
 const [datos, setDatos] = useState([]);
 
+const desc = (!descripcion) ? cat : descripcion
+
+
 const getProduct = () => {
   const getData = new Promise((resolve, reject) => {
     resolve({
@@ -41,17 +44,19 @@ useEffect(() => {
     <div>      
         <h1>{bienvenida}</h1>
         <h2>{nombre}</h2>
-        <h2>{descripcion}</h2>
+        <h2>{desc.toUpperCase()} </h2>
+        <div className="d-flex justify-content-center flex-wrap">
         {
-          datos.filter((p) => p.categoria === cat).map(({id,categoria,img,description},index) =>(
+          (cat ? datos.filter((p) => p.categoria === cat) : datos).map(({id,img,description,precio},index) =>(
             <Card
               key={index}
-              id={id}
-              categoria={categoria}
+              id={id}              
               img={img}
               description={description}
+              precio={precio}
             />)
-            )}                  
+            )}
+        </div>                   
       
     </div>
   )

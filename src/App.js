@@ -31,12 +31,12 @@ function App() {
             element={
               <ItemListContainer
               bienvenida="BIENVENIDO AL PROYECTO"
-              nombre="CESAR PETIT"
-              descripcion="Listado Productos"
+              nombre="CESAR PETIT"              
               />              
             }
           />
           <Route path="/counter" element={<Counter />} />
+          <Route path="/item/detail/:id" element={<ItemDetailContainer />} />
           <Route path="*" element={<Error404 />} />
         </Routes>
       </Router>
