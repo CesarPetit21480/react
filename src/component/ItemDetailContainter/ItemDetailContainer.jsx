@@ -35,7 +35,6 @@ const ItemDetailContainer = () => {
     };
   }, []);
 
-  console.log('i',item);
 
   return <div>{item ? <ItemDetail item={item} /> : <h1>Cargando...</h1>}</div>;
 

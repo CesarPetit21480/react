@@ -10,3 +10,11 @@
     text-align: center;
     border: solid 1px black;
 }
+
+.cardPropio {
+    color: black;
+    margin-left: 5px;
+    width: 18rem;
+    margin: 40px;
+    padding: 20px;
+}

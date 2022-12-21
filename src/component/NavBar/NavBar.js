@@ -5,6 +5,7 @@ import {NavLink} from "react-router-dom"
 
 
 const NavBar = () => {
+
   return ( 
       <nav className="navbar navbar-expand-lg navPropio">
         <div className="container-fluid">
@@ -45,8 +46,7 @@ const NavBar = () => {
             </form>
           </div>
         </div>
-      </nav>
- 
+      </nav> 
   );
 };
 
