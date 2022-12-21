@@ -4,13 +4,8 @@ import "./ItemDetail.css";
 const imgRoutes = require.context("../../assets/productos", true);
 
 const ItemDetail = (props) => {
-<<<<<<< HEAD
   const { item,addCarrito } = props;
-  const { categoria, img, description, precio } = item;
-=======
-  const { item } = props;
-  const { img, description, precio } = item;
->>>>>>> d63f231d7bc4e474dbc91b3789cc166166a75612
+  const {img, description, precio } = item;
   const [count, setCount] = useState(1);
 
   const sumar = () => {
