@@ -4,8 +4,13 @@ import "./ItemDetail.css";
 const imgRoutes = require.context("../../assets/productos", true);
 
 const ItemDetail = (props) => {
+<<<<<<< HEAD
   const { item,addCarrito } = props;
   const { categoria, img, description, precio } = item;
+=======
+  const { item } = props;
+  const { img, description, precio } = item;
+>>>>>>> d63f231d7bc4e474dbc91b3789cc166166a75612
   const [count, setCount] = useState(1);
 
   const sumar = () => {
@@ -17,9 +22,9 @@ const ItemDetail = (props) => {
 
   return (
     <div>
-      <div>
-        <h1>ELEMENTO SELECCIONADO</h1>
-        <div className="card">
+      <h1>ELEMENTO SELECCIONADO</h1>
+      <div className="d-flex justify-content-center">
+        <div className="card cardPropio ">
           <img
             className="card-img-top imgTamanio img-thumbnail"
             src={imgRoutes(`${img}`)}

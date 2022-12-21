@@ -5,8 +5,15 @@
     margin-left: 1rem;
     margin-right: 1rem;
     font-size: large;
-    font-weight: bold;
-    ;
+    font-weight: bold;    
     text-align: center;
     border: solid 1px black;
+}
+
+.cardPropio {
+    color: black;
+    margin-left: 5px;
+    width: 18rem;
+    margin: 40px;
+    padding: 20px;
 }

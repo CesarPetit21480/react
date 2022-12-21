@@ -47,23 +47,7 @@ const addCarrito = () => {
           <Route path="/item/detail/:id" element={<ItemDetailContainer addCarrito = {addCarrito} />} />
           <Route path="*" element={<Error404 />} />
         </Routes>
-      </Router>
-
-      {/*      
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
+      </Router>    
     </div>
   );
 }
