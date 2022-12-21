@@ -1,0 +1,1 @@
+Segunda Entrega : Se Crearon navbar utilizables , el componente itemlistContainer, el itemDetail funcionando de manera correcta y se utilizo el routes para redireccionar las paginas
