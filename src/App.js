@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
+import CarritoDetail from "./component/CarritoDetail/CarritoDetail";
 import Counter from "./component/Counter/Counter";
 import Error404 from "./component/Error404/Error404";
 import ItemDetailContainer from "./component/ItemDetailContainter/ItemDetailContainer";
@@ -49,6 +50,7 @@ const addCarrito = (item) => {
           />
           <Route path="/counter" element={<Counter />} />
           <Route path="/item/detail/:id" element={<ItemDetailContainer addCarrito = {addCarrito} />} />
+          <Route path="/carrito/detail" element={<CarritoDetail carrito= {carrito} />} />          
           <Route path="*" element={<Error404 />} />
         </Routes>
       </Router>    
