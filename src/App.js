@@ -14,10 +14,14 @@ function App() {
   const [carrito, setCarrito] = useState([]);
   const [count, setcount] = useState(0)
 
-const addCarrito = () => {  
-  //setCarrito([...carrito, item])
-  setcount(count + 1);
+const addCarrito = (item) => {  
+  setCarrito([...carrito, item]);
+    setcount(count + 1);
+
+    console.log("el Carrito", carrito)
 }
+
+
   return (
     <div className="App">
    

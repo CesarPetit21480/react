@@ -37,7 +37,7 @@ const ItemDetail = (props) => {
             </button>
           </div>
           <div>
-            <button onClick={addCarrito} className="btn btn-dark">Agregar Al Carrito</button>
+            <button onClick={() => addCarrito(item)} className="btn btn-dark">Agregar Al Carrito</button>
           </div>
         </div>
       </div>
