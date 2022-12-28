@@ -1,8 +1,7 @@
-import React,{createContext, useState} from 'react'
+import React,{createContext, useState,useEffect} from 'react'
 import data from "../json/data.json";
 import {toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
 
 export const CarritoContext = createContext('')
 
@@ -47,16 +46,18 @@ const CarritoContextProvider   = ({children})   => {
         console.log("error Carga", error);
       });
   };
-
-getProduct();
   
-  // useEffect(() => {
-  //   getProduct();
+  useEffect(() => {
+    getProduct();
 
-  //   return () => {
-  //     setItem([]);
-  //   };
-  // }, []);
+    return () => {
+      setItem([]);
+    };
+  }, []);
+
+
+
+
   
 console.log('datos context', datos);
 

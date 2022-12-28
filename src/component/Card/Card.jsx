@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Card.css";
 
 const imgRoutes = require.context("../../assets/productos", true);
 
 const Card = (props) => {
+
   const { id, img, description, precio } = props;
 
   return (
