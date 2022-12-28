@@ -26,9 +26,11 @@ const ItemDetail = (props) => {
             src={imgRoutes(`${img}`)}
             alt="remera"
           />
-          <div className="card-body d-flex justify-content-center">
+          <div className="card-body">
             <h5 className="card-title">{precio} $</h5>
             <p className="card-text">{description}</p>
+
+          <div  className = "d-flex justify-content-center">
             <button className="btn btn-dark" onClick={sumar}>
               +
             </button>
@@ -36,6 +38,7 @@ const ItemDetail = (props) => {
             <button className="btn btn-dark" onClick={restar}>
               -
             </button>
+            </div>
           </div>
           <div className = "d-flex justify-content-center" >
             <button onClick={() => addCarrito(item)} className="btn btn-dark">Agregar Al Carrito</button>
