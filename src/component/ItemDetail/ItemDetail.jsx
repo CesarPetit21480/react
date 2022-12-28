@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./ItemDetail.css";
-
 const imgRoutes = require.context("../../assets/productos", true);
+import { CarritoContext } from "../../context/CarritoContext";
 
 const ItemDetail = (props) => {
-  const { item,addCarrito } = props;
+  const { item } = props;
   const {img, description, precio } = item;
   const [count, setCount] = useState(1);
+  const {addCarrito} = useContext(CarritoContext)
 
   const sumar = () => {
     setCount(count + 1);
@@ -25,7 +26,7 @@ const ItemDetail = (props) => {
             src={imgRoutes(`${img}`)}
             alt="remera"
           />
-          <div className="card-body">
+          <div className="card-body d-flex justify-content-center">
             <h5 className="card-title">{precio} $</h5>
             <p className="card-text">{description}</p>
             <button className="btn btn-dark" onClick={sumar}>
@@ -36,7 +37,7 @@ const ItemDetail = (props) => {
               -
             </button>
           </div>
-          <div>
+          <div className = "d-flex justify-content-center" >
             <button onClick={() => addCarrito(item)} className="btn btn-dark">Agregar Al Carrito</button>
           </div>
         </div>

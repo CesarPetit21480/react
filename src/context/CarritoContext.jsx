@@ -8,26 +8,8 @@ export const CarritoContext = createContext('')
 const CarritoContextProvider   = ({children})   => {
 
   const [datos, setDatos] = useState([]);
-
   const [carrito, setCarrito] = useState([]);
   const [count, setcount] = useState(0);
-
-  const addCarrito = (item) => {
-    setCarrito([...carrito, item]);
-    setcount(count + 1);
-    showToastMessage();
-  
-  };
-
-  const showToastMessage = () => {
-    console.log('showToastMessage');
-    
-    toast.success('Producto Agregado al Carrito!!!', {     
-      position: toast.POSITION.BOTTOM_RIGHT,
-    });
-};
-
-
 
   const getProduct = () => {
     const getData = new Promise((resolve, reject) => {
@@ -51,10 +33,24 @@ const CarritoContextProvider   = ({children})   => {
     getProduct();
 
     return () => {
-      setItem([]);
+      setDatos([]);
     };
   }, []);
 
+  const addCarrito = (item) => {
+    setCarrito([...carrito, item]);
+    setcount(count + 1);
+   // showToastMessage();
+  
+  };
+
+  const showToastMessage = () => {
+    console.log('showToastMessage');
+    
+    toast.success('Producto Agregado al Carrito!!!', {     
+      position: toast.POSITION.BOTTOM_RIGHT,
+    });
+};
 
 
 
@@ -65,7 +61,7 @@ console.log('datos context', datos);
 
 
   return (
-    <CarritoContext.Provider value={{datos:datos,carrito:carrito,addCarrito,ToastContainer}}>CarritoContext
+    <CarritoContext.Provider value={{datos:datos,carrito:carrito,count,addCarrito,ToastContainer}}>CarritoContext
      {children}  
     </CarritoContext.Provider>
   )

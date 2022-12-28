@@ -36,11 +36,7 @@ const ItemDetailContainer = (props) => {
       setItem([]);
     };
   }, []);
-
-
-
-  return <div>{item ? <ItemDetail item={item} addCarrito={addCarrito} /> : <h1>Cargando...</h1>}</div>;
-
+  return <div>{item ? <ItemDetail item={item}/> : <h1>Cargando...</h1>}</div>;
 };
 
 export default ItemDetailContainer;
