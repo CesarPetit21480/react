@@ -5,9 +5,9 @@ import { CarritoContext } from "../../context/CarritoContext";
 
 const ItemDetail = (props) => {
   const { item } = props;
-  const {img, description, precio } = item;
+  const { img, description, precio } = item;
   const [count, setCount] = useState(1);
-  const {addCarrito} = useContext(CarritoContext)
+  const { addCarrito } = useContext(CarritoContext);
 
   const sumar = () => {
     setCount(count + 1);
@@ -30,18 +30,20 @@ const ItemDetail = (props) => {
             <h5 className="card-title">{precio} $</h5>
             <p className="card-text">{description}</p>
 
-          <div  className = "d-flex justify-content-center">
-            <button className="btn btn-dark" onClick={sumar}>
-              +
-            </button>
-            <input className="inpt" type="text" value={count} />
-            <button className="btn btn-dark" onClick={restar}>
-              -
-            </button>
+            <div className="d-flex justify-content-center">
+              <button className="btn btn-dark" onClick={sumar}>
+                +
+              </button>
+              <input className="inpt" type="text" value={count} />
+              <button className="btn btn-dark" onClick={restar}>
+                -
+              </button>
             </div>
           </div>
-          <div className = "d-flex justify-content-center" >
-            <button onClick={() => addCarrito(item)} className="btn btn-dark">Agregar Al Carrito</button>
+          <div className="d-flex justify-content-center">
+            <button onClick={() => addCarrito(item)} className="btn btn-dark">
+              Agregar Al Carrito
+            </button>
           </div>
         </div>
       </div>
