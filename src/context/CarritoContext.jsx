@@ -1,12 +1,11 @@
-import React,{createContext, useState,useEffect} from 'react'
+import React, { createContext, useState, useEffect } from "react";
 import data from "../json/data.json";
-import {toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-export const CarritoContext = createContext('')
+export const CarritoContext = createContext("");
 
-const CarritoContextProvider   = ({children})   => {
-
+const CarritoContextProvider = ({ children }) => {
   const [datos, setDatos] = useState([]);
   const [carrito, setCarrito] = useState([]);
   const [count, setcount] = useState(0);
@@ -19,7 +18,7 @@ const CarritoContextProvider   = ({children})   => {
       });
       reject(console.log("error Carga"));
     });
-  
+
     getData
       .then((resultado) => {
         setDatos(resultado.data);
@@ -28,7 +27,7 @@ const CarritoContextProvider   = ({children})   => {
         console.log("error Carga", error);
       });
   };
-  
+
   useEffect(() => {
     getProduct();
 
@@ -37,34 +36,26 @@ const CarritoContextProvider   = ({children})   => {
     };
   }, []);
 
-  const addCarrito = (item) => {
-    setCarrito([...carrito, item]);
+  const addCarrito = (id) => {
+    const filtrado = datos.filter((data) => data.id === Number(id));
+
+    setCarrito([...carrito, filtrado[0]]);
     setcount(count + 1);
-   // showToastMessage();
-  
+    showToastMessage();
   };
 
-  const showToastMessage = () => {
-    console.log('showToastMessage');
-    
-    toast.success('Producto Agregado al Carrito!!!', {     
+  const showToastMessage = () => {  
+    toast.success("Producto Agregado al Carrito!!!", {
       position: toast.POSITION.BOTTOM_RIGHT,
     });
+  };
+  return (
+    <CarritoContext.Provider
+      value={{ datos: datos, carrito: carrito, count, addCarrito }}
+    >
+      {children}
+    </CarritoContext.Provider>
+  );
 };
 
-
-
-  
-console.log('datos context', datos);
-
-
-
-
-  return (
-    <CarritoContext.Provider value={{datos:datos,carrito:carrito,count,addCarrito,ToastContainer}}>CarritoContext
-     {children}  
-    </CarritoContext.Provider>
-  )
-}
-
-export default CarritoContextProvider 
+export default CarritoContextProvider;

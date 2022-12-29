@@ -9,11 +9,9 @@ import ItemListContainer from "./component/ItemListContainer/ItemListContainer";
 import NavBar from "./component/NavBar/NavBar";
 import CarritoContextProvider from "./context/CarritoContext";
 // import {CarritoContext}  from "./context/CarritoContext";
+import { ToastContainer } from "react-toastify";
 
 function App() {
-
-  // const {ToastContainer} = useContext(CarritoContext);
-
 
 //   const [carrito, setCarrito] = useState([]);
 //   const [count, setcount] = useState(0);
@@ -35,8 +33,7 @@ function App() {
 
   return (
     <CarritoContextProvider className="App">
-      <Router>
-        {/* <NavBar count={count} /> */}
+      <Router>       
         <NavBar/>
         <Routes>
           <Route
@@ -72,7 +69,7 @@ function App() {
           <Route path="*" element={<Error404 />} />
         </Routes>
       </Router>
-      {/* <ToastContainer /> */}
+      <ToastContainer />
     </CarritoContextProvider>
   );
 }

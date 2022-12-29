@@ -1,7 +1,8 @@
 import React, { useContext, useState } from "react";
+import { CarritoContext } from "../../context/CarritoContext";
 import "./ItemDetail.css";
 const imgRoutes = require.context("../../assets/productos", true);
-import { CarritoContext } from "../../context/CarritoContext";
+
 
 const ItemDetail = (props) => {
   const { item } = props;

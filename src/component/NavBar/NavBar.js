@@ -1,11 +1,9 @@
-import React, { useContext } from "react";
+import React from "react";
 import "./css/Nabvar.css";
 import CartWidget from "../CartWidget/CartWidget.jsx";
 import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
-
-
   return (
     <nav className="navbar navbar-expand-lg navPropio">
       <div className="container-fluid">

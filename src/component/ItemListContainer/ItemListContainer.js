@@ -4,15 +4,12 @@ import { useParams } from "react-router-dom";
 import data from "../../json/data.json";
 
 
-
 const ItemListContainer = (props) => {
 
 const {bienvenida,nombre,descripcion} = props;
 const { cat } = useParams();
 const [datos, setDatos] = useState([]);
-
 const desc = (!descripcion) ? cat : descripcion
-
 
 const getProduct = () => {
   const getData = new Promise((resolve, reject) => {
