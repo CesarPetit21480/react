@@ -1,4 +1,3 @@
-import {useContext } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 import CarritoDetail from "./component/CarritoDetail/CarritoDetail";
@@ -12,29 +11,10 @@ import CarritoContextProvider from "./context/CarritoContext";
 import { ToastContainer } from "react-toastify";
 
 function App() {
-
-//   const [carrito, setCarrito] = useState([]);
-//   const [count, setcount] = useState(0);
-
-//   const addCarrito = (item) => {
-//     setCarrito([...carrito, item]);
-//     setcount(count + 1); 
-//     showToastMessage();
-  
-//   };
-
-//   const showToastMessage = () => {
-//     console.log('showToastMessage');
-    
-//     toast.success('Producto Agregado al Carrito!!!', {     
-//       position: toast.POSITION.BOTTOM_RIGHT,
-//     });
-// };
-
   return (
     <CarritoContextProvider className="App">
-      <Router>       
-        <NavBar/>
+      <Router>
+        <NavBar />
         <Routes>
           <Route
             path="/"
@@ -59,12 +39,12 @@ function App() {
           <Route
             path="/item/detail/:id"
             // element={<ItemDetailContainer addCarrito={addCarrito} />}
-             element={<ItemDetailContainer/>}
+            element={<ItemDetailContainer />}
           />
           <Route
             path="/carrito/detail"
             // element={<CarritoDetail carrito={carrito} />}
-             element={<CarritoDetail/>}
+            element={<CarritoDetail />}
           />
           <Route path="*" element={<Error404 />} />
         </Routes>

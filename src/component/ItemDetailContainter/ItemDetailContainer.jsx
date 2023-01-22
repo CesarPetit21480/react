@@ -1,42 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import data from "../../json/data.json";
 import ItemDetail from "../ItemDetail/ItemDetail";
-const imgRoutes = require.context("../../assets/productos", true);
+import useFirebase from "../../hooks/useFirebase";
 
-const ItemDetailContainer = (props) => {
-  const [item, setItem] = useState(null);
+const ItemDetailContainer = () => {
   const { id } = useParams();
-  const {addCarrito} = props;
-  
-  const getProduct = () => {
-    const getData = new Promise((resolve, reject) => {
-      resolve({
-        status: 200,
-        data: data.productos,
-      });
-      //reject(console.log("error Carga"));
-    });
-
-    getData
-      .then((resultado) => {
-        const filtrado = resultado.data.filter((data) => data.id === Number(id));      
-        console.log(filtrado)
-        setItem(filtrado[0]);
-      })
-      .catch((error) => {
-        console.log("error Carga", error);
-      });
-  };
+  const { producto, getProducto } = useFirebase();
 
   useEffect(() => {
-    getProduct();
+    getProducto({id})  
+}, [])
 
-    return () => {
-      setItem([]);
-    };
-  }, []);
-  return <div>{item ? <ItemDetail item={item}/> : <h1>Cargando...</h1>}</div>;
+  return (
+    <div>
+     {producto.id ? <ItemDetail producto={producto} /> : <h1>Cargando...</h1>}
+   
+    
+    </div>
+  );
 };
 
 export default ItemDetailContainer;
+
+
+

@@ -1,3 +1,13 @@
 .maximo {
     max-width: 540px;
 }
+
+.imgTamanio {
+    width: 200px;
+    height: 200px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 0px;
+}

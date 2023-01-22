@@ -1,12 +1,13 @@
 // import { Link } from "react-router-dom";
-import "./Card.css";
+import "./Cards.scss";
 import React, { useContext,useState } from "react";
 import { CarritoContext } from "../../context/CarritoContext";
+import { Link } from "react-router-dom";
 
 const imgRoutes = require.context("../../assets/productos", true);
 
 const Card = (props) => {
-  const { id, img, description, precio } = props;
+  const { id, img, description, precio,stock} = props;
   const { addCarrito } = useContext(CarritoContext);
 
   const [countItem, setCountItem] = useState(0);
@@ -17,7 +18,6 @@ const Card = (props) => {
   const restar = () => {
     if (countItem > 0) setCountItem(countItem - 1);
   };
-
   return (
     <div>
       <div className="card cardPropio">
@@ -26,30 +26,17 @@ const Card = (props) => {
           src={imgRoutes(`${img}`)}
           alt="remera"
         />
-        <div className="card-body d-flex flex-column align-items-center">
+        <div className="card-body d-flex flex-column align-items-center bodyPropio">
           <h5 className="card-title">{precio} $</h5>
           <p className="card-text descripcion">{description}</p>
+          <p className="card-text descripcion">Stock: {stock}</p>
         </div>
-        {/* <div className="d-flex justify-content-center">
-          <Link to={`/item/detail/${id}`} className="btn btn-dark btnPropio">
-            SELECCIONAR
-          </Link>
-        </div> */}
-        <div className="d-flex justify-content-center">
-          <button className="btn btn-dark" onClick={sumar}>
-            +
-          </button>
-          <input className="inpt" type="text" value={countItem} />
-          <button className="btn btn-dark" onClick={restar}>
-            -
-          </button>
-        </div>       
 
-        <div className="d-flex justify-content-center mt-2">
-          <button onClick={() => addCarrito(id)} className="btn btn-dark">
-            Agregar Al Carrito
-          </button>
-        </div>
+        <div className="d-flex justify-content-center mt-1 ">
+          <Link to={`/item/detail/${id}`} className="btn btn-dark boton">
+            VER DETALLE
+          </Link>
+        </div>  
       </div>
     </div>
   );

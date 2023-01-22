@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { CarritoContext } from "../../context/CarritoContext";
 
 const CartWidget = () => {
-  const { count } = useContext(CarritoContext);
+  const { contCarrito } = useContext(CarritoContext);
 
   return (
     <div className="d-flex">
@@ -13,7 +13,7 @@ const CartWidget = () => {
         {" "}
         <img className="tamanio" src={carro} alt="carrito" />{" "}
       </Link>
-      <h5 className="color">{count}</h5>
+      <h5 className="color">{contCarrito}</h5>
     </div>
   );
 };
