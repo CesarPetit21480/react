@@ -33,6 +33,7 @@ const CarritoContextProvider = ({ children }) => {
 
   const agregoCarrito = ( producto, cant) => {
     const Nuevacompra = {
+      
       id: producto.id,
       categoria: producto.categoria,
       img: producto.img,
