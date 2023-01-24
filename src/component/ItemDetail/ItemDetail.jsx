@@ -5,7 +5,7 @@ const imgRoutes = require.context("../../assets/productos", true);
 
 const ItemDetail = (props) => {
   const { producto } = props;
-  const { img, description, precio } = producto;
+  const { img, description, precio,stock } = producto;
   const [count, setCount] = useState(1);
   const { addCarrito } = useContext(CarritoContext);
   
@@ -42,7 +42,7 @@ const ItemDetail = (props) => {
             </div>
           </div>
           <div className="d-flex justify-content-center">
-            <button onClick={() => addCarrito(producto,count)} className="btn btn-dark">
+            <button onClick={() => addCarrito(producto,count)} className="btn boton">
               Agregar Al Carrito
             </button>
           </div>

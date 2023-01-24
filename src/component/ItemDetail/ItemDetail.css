@@ -5,9 +5,10 @@
     margin-left: 1rem;
     margin-right: 1rem;
     font-size: large;
-    font-weight: bold;    
+    font-weight: bold;
     text-align: center;
     border: solid 1px black;
+    border-radius: 10px;
 }
 
 .cardPropio {
@@ -17,4 +18,14 @@
     height: 30rem;
     margin: 40px;
     padding: 20px;
+}
+
+.boton {
+    background-image: linear-gradient(to right top, #93a6c4, #71a6ba, #5fa3a1, #699c7f, #819060);
+    width: 30rem;
+    height: 3rem;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-top: 0.5rem;
+    font-size: larger;
 }

@@ -13,3 +13,20 @@ export const existeEnCarrito = (carrito,id) => {
 }
 
 
+export const dameTotat = (carrito) => {
+    let suma = 0;
+    for (let i = 0; i < carrito.length; i++) {
+      suma = suma + carrito[i].cantidad * carrito[i].precio;
+    }
+    return suma;
+  };
+  
+
+  export const validarTodoLLeno = (campos) => {
+    // let invalid = false;
+    // campos.map((campo) => campo === "" ? invalid = true : invalid = false)
+    // return invalid
+    return campos.some((campo) => campo === "")
+  }
+  
+  

@@ -3,7 +3,6 @@ import "./Cards.scss";
 import React, { useContext,useState } from "react";
 import { CarritoContext } from "../../context/CarritoContext";
 import { Link } from "react-router-dom";
-
 const imgRoutes = require.context("../../assets/productos", true);
 
 const Card = (props) => {
@@ -22,18 +21,18 @@ const Card = (props) => {
     <div>
       <div className="card cardPropio">
         <img
-          className="card-img-top imgTamanio img-thumbnail"
+          className="card-img-top imgTamanio"
           src={imgRoutes(`${img}`)}
           alt="remera"
         />
         <div className="card-body d-flex flex-column align-items-center bodyPropio">
           <h5 className="card-title">{precio} $</h5>
-          <p className="card-text descripcion">{description}</p>
-          <p className="card-text descripcion">Stock: {stock}</p>
+          <h5 className="card-text descripcion">{description}</h5>
+          <h5 className="card-text descripcion">Stock: {stock}</h5>
         </div>
 
         <div className="d-flex justify-content-center mt-1 ">
-          <Link to={`/item/detail/${id}`} className="btn btn-dark boton">
+          <Link to={`/item/detail/${id}`} className="btn boton">
             VER DETALLE
           </Link>
         </div>  

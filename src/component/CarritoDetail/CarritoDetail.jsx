@@ -1,47 +1,61 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
+import { Link } from "react-router-dom";
+import "./CarritoDetail.scss";
 import { CarritoContext } from "../../context/CarritoContext";
+import CarritoElement from "../../CarritoElement/CarritoElement";
+import Formulario from "../Formulario/Formulario";
+import { dameTotat } from "../../helpers";
 const imgRoutes = require.context("../../assets/productos", true);
 
-const CarritoDetail = (props) => {
-  const { carrito } = useContext(CarritoContext);
+
+const CarritoDetail = () => {
+  const { carrito } = useContext(CarritoContext); 
+
   return (
-    <div className="container text-center mt-3">
-      {carrito.map(
-        ({ id, categoria, img, description, precio, cantidad }, index) => (
-          <div className="row g-2">
-            <div className="col-8">
-              <div class="card mb-3" style={{ maxWidth: "540px" }}>
-                <div class="row g-0">
-                  <div class="col-md-4">
-                    <img
-                      className="card-img-top imgTamanio img-thumbnail mb-4 ms-3"
-                      src={imgRoutes(`${img}`)}
-                      alt="remera"
-                    />
-                  </div>
-                  <div className="col-md-8">
-                    <div className="card-body">
-                      <h5 className="card-text">{description}</h5>
-                      <p className="card-text">
-                        <small className="text-muted">
-                          Precio Unitario: {precio}
-                        </small>
-                      </p>
-                      <p className="card-text">
-                        <small className="text-muted">
-                          Cantidad Seleccionada: {cantidad}
-                        </small>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+    <div className="container-fluid">
+
+      {carrito.length > 0 ? (   
+      <div className="container border m-lg-5 ">
+          <div className="row">
+            <div className="container col col-12 col-md-6 my-4 py-2 container-scroll">
+              {carrito.map((item, index) => (
+                  <CarritoElement key={index} item={item}  />
+              ))}
             </div>
-            <div className="col-4">
-              <div className="p-3 border bg-light">Custom column padding</div>
+            <div className="col col-12 col-md-6 py-2 my-4">
+              { <Formulario total={dameTotat(carrito)} compra={carrito} /> }
             </div>
           </div>
-        )
+        </div>) : <h1>Cargando....</h1>}
+
+
+
+      
+      {/* {carrito.lenght > 0 && (
+        <div className="container border m-lg-5 ">
+          <div className="row">
+            <div className="container col col-12 container-scroll">
+              {carrito.map((item, index) => (
+                  <CarritoElement key={index} item={item} />
+              ))}
+            </div>
+          </div>
+        </div>
+      )} */}
+        {carrito.length < 1 && (
+        <div className="container full-height d-flex align-items-center justify-content-center ">
+          <div className="w-50">
+            <h3 className="text-center text-uppercase">
+              el carrito esta vacio
+            </h3>
+
+            <div className="my-5 d-flex">
+              <Link to="/" className="btn btn-primary w-100 text-uppercase">
+                volver a comprar
+              </Link>
+            </div>
+          </div>
+        </div>
       )}
     </div>
   );

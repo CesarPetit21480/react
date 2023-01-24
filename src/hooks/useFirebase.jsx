@@ -1,7 +1,14 @@
 import { useState } from "react";
-import { collection, getDocs, getDoc, doc } from "firebase/firestore";
+import {
+  collection,
+  getDocs,
+  getDoc,
+  doc,
+  updateDoc,
+} from "firebase/firestore";
 import { db } from "../services";
-import { GlobalProvider } from "../context/GlobalContext";
+// import { GlobalProvider } from "../context/GlobalContext";
+// import { async } from "@firebase/util";
 
 const useFirebase = () => {
   const [data, setData] = useState([]);
@@ -28,18 +35,34 @@ const useFirebase = () => {
       const response = await getDoc(document);
       let result = response.data();
       setProducto({ id: response.id, ...result });
-     // setLoading(false);
+      // setLoading(false);
     } catch (error) {
       console.log(error);
     }
   };
 
+  const updateProducto = async ( id, nuevoStock ) => {
+    
+    console.log('nuevo Stock',nuevoStock);
+
+    try {
+      const data = {
+        stock: parseInt(nuevoStock),
+      };
+      console.log(data);
+      const document = doc(db, "productos", id);
+      await updateDoc(document, { stock: nuevoStock });
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return {
     data,
     producto,
     getProductos,
     getProducto,
+    updateProducto,
   };
 };
 
