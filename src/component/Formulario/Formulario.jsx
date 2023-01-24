@@ -1,4 +1,4 @@
-import React, { useState ,useContext} from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import useFirebase from "../../hooks/useFirebase";
 import Swal from "sweetalert2";
@@ -35,8 +35,8 @@ const Input = ({
 };
 
 const Formulario = ({ total, compra }) => {
-  const { limpioElCarrito } =useContext(CarritoContext);
-  //const { fetchGenerateTicket } = useFirebase();
+  const { limpioElCarrito } = useContext(CarritoContext);
+  const { generarTicket, ticket } = useFirebase();
 
   const [formulario, setFormulario] = useState({
     buyer: {
@@ -50,8 +50,6 @@ const Formulario = ({ total, compra }) => {
   });
 
   const [error, setError] = useState({});
-  
-  
 
   const {
     buyer: { email, nombre, apellido, telefono },
@@ -69,10 +67,10 @@ const Formulario = ({ total, compra }) => {
     }
     Swal.fire({
       title: "Genial!",
-      text: "Su orden de compra se genero correctamente!",
+      text: "Su orden de compra se genero correctamente con el numero!",
       icon: "success",
     });
-    //fetchGenerateTicket({ datos: formulario });
+    generarTicket({ datos: formulario });
     limpioElCarrito();
   };
 
@@ -99,21 +97,21 @@ const Formulario = ({ total, compra }) => {
   return (
     <form onSubmit={onSubmit} className="container border">
       <h3 className="text-uppercase text-center my-4">datos Comprador</h3>
-      {Object.keys(formulario.buyer).map((key,index) => (
+      {Object.keys(formulario.buyer).map((key, index) => (
         <Input
-        key={index}
-        className="mb-3"
-        type="text"
-        name={`${key}`}
-        value={key.value}
-        onChange={handleChange}
-        onBlur={handleBlur}
-        inputClassName={`form-control ${error[key] && "is-invalid"}`}
-        placeholder={`${key}`}
-        error={error}
+          key={index}
+          className="mb-3"
+          type="text"
+          name={`${key}`}
+          value={key.value}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          inputClassName={`form-control ${error[key] && "is-invalid"}`}
+          placeholder={`${key}`}
+          error={error}
         />
       ))}
-     
+
       <div className="border row d-flex px-2">
         <div className="col-12 col-lg-9">
           <p className="fs-4 text-uppercase">total</p>

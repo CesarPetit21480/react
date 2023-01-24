@@ -5,6 +5,7 @@ import {
   getDoc,
   doc,
   updateDoc,
+  addDoc,
 } from "firebase/firestore";
 import { db } from "../services";
 // import { GlobalProvider } from "../context/GlobalContext";
@@ -13,6 +14,7 @@ import { db } from "../services";
 const useFirebase = () => {
   const [data, setData] = useState([]);
   const [producto, setProducto] = useState({});
+  const [ticket,setTicket] = useState();
   // const  {setLoading}  = GlobalProvider();
 
   const getProductos = async () => {
@@ -41,10 +43,7 @@ const useFirebase = () => {
     }
   };
 
-  const updateProducto = async ( id, nuevoStock ) => {
-    
-    console.log('nuevo Stock',nuevoStock);
-
+  const updateProducto = async (id, nuevoStock) => {
     try {
       const data = {
         stock: parseInt(nuevoStock),
@@ -57,12 +56,24 @@ const useFirebase = () => {
     }
   };
 
+  const generarTicket = async (datos) => {
+    try {
+      const document = collection(db, "ticket");
+      const orden = await addDoc(document, datos);     
+   
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return {
     data,
     producto,
+    ticket,
     getProductos,
     getProducto,
     updateProducto,
+    generarTicket 
   };
 };
 
