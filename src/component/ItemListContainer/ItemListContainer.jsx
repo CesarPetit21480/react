@@ -9,14 +9,9 @@ const ItemListContainer = (props) => {
   const { cat } = useParams();
 
   const desc = !descripcion ? cat : descripcion;
-
-
   useEffect(() => {
     getProductos();
   },[]);
-
-
-  console.log(data);
 
   return (
     <div>
