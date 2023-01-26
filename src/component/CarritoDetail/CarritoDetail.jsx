@@ -2,9 +2,9 @@ import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./CarritoDetail.scss";
 import { CarritoContext } from "../../context/CarritoContext";
-import CarritoElement from "../../CarritoElement/CarritoElement";
 import Formulario from "../Formulario/Formulario";
 import { dameTotat } from "../../helpers";
+import CarritoElement from "../CarritoElement/CarritoElement";
 const imgRoutes = require.context("../../assets/productos", true);
 
 
@@ -26,22 +26,8 @@ const CarritoDetail = () => {
               { <Formulario total={dameTotat(carrito)} compra={carrito} /> }
             </div>
           </div>
-        </div>) : <h1>Cargando....</h1>}
-
-
-
-      
-      {/* {carrito.lenght > 0 && (
-        <div className="container border m-lg-5 ">
-          <div className="row">
-            <div className="container col col-12 container-scroll">
-              {carrito.map((item, index) => (
-                  <CarritoElement key={index} item={item} />
-              ))}
-            </div>
-          </div>
-        </div>
-      )} */}
+        </div>) : undefined}
+  
         {carrito.length < 1 && (
         <div className="container full-height d-flex align-items-center justify-content-center ">
           <div className="w-50">

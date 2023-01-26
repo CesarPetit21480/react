@@ -1,5 +1,4 @@
 import React, { createContext, useState } from "react";
-import { useEffect } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Swal from "sweetalert2";
@@ -9,11 +8,7 @@ export const CarritoContext = createContext();
 
 const CarritoContextProvider = ({ children }) => {
   const [carrito, setCarrito] = useState([]);
-  const [contCarrito, setContCarrito] = useState(0);
   const { updateProducto } = useFirebase();
-
-
-  
 
   const addCarrito = (prod, cant) => {
     if (existeEnCarrito(carrito, prod.id)) {
@@ -27,12 +22,13 @@ const CarritoContextProvider = ({ children }) => {
     }
     agregoCarrito(prod, cant);
     showToastMessage();
+
   };
 
-  const quitarDelCarrito = (id) => {
+  const quitarDelCarrito = (id, cantidad, stock) => {
     const nuevoCarrito = carrito.filter((p) => p.id !== id);
     setCarrito(nuevoCarrito);
-    setContCarrito = contCarrito - 1;
+    updateProducto(id, stock);
   };
 
   const limpioElCarrito = () => {
@@ -47,23 +43,23 @@ const CarritoContextProvider = ({ children }) => {
       description: producto.description,
       precio: producto.precio,
       cantidad: cant,
+      stock: producto.stock,
     };
     setCarrito([...carrito, Nuevacompra]);
-    setContCarrito(contCarrito + 1);
     const stockActualizado = parseInt(producto.stock) - cant;
-    updateProducto(producto.id, stockActualizado);
+    updateProducto(producto.id, stockActualizado);    
+
   };
   const showToastMessage = () => {
     toast.success("Producto Agregado al Carrito!!!", {
       position: toast.POSITION.TOP_RIGHT,
-      className: 'toast-message'
+      className: "toast-message",
     });
   };
   return (
     <CarritoContext.Provider
       value={{
         carrito: carrito,
-        contCarrito,
         addCarrito,
         limpioElCarrito,
         quitarDelCarrito,

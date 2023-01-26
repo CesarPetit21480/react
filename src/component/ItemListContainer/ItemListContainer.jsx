@@ -5,13 +5,13 @@ import useFirebase from "../../hooks/useFirebase";
 
 const ItemListContainer = (props) => {
   const { bienvenida, nombre, descripcion } = props;
-  const { data,getProductos } = useFirebase();
+  const { data, getProductos } = useFirebase();
   const { cat } = useParams();
 
   const desc = !descripcion ? cat : descripcion;
   useEffect(() => {
     getProductos();
-  },[]);
+  }, []);
 
   return (
     <div>
@@ -27,7 +27,7 @@ const ItemListContainer = (props) => {
               img={img}
               description={description}
               precio={precio}
-              stock={stock}
+              stock={stock < 0 ? 'SIN STOCK' : stock}
             />
           )
         )}

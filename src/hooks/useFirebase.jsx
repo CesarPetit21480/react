@@ -8,14 +8,14 @@ import {
   addDoc,
 } from "firebase/firestore";
 import { db } from "../services";
-// import { GlobalProvider } from "../context/GlobalContext";
+import { GlobalProvider } from "../context/GlobalContext";
+
 // import { async } from "@firebase/util";
 
 const useFirebase = () => {
   const [data, setData] = useState([]);
   const [producto, setProducto] = useState({});
-  const [ticket,setTicket] = useState();
-  // const  {setLoading}  = GlobalProvider();
+  const  {setLoading}  = GlobalProvider();
 
   const getProductos = async () => {
     try {
@@ -31,13 +31,15 @@ const useFirebase = () => {
   };
 
   const getProducto = async ({ id }) => {
-    //setLoading(true);
+    setLoading(true);
     try {
       const document = doc(db, "productos", id);
       const response = await getDoc(document);
       let result = response.data();
-      setProducto({ id: response.id, ...result });
-      // setLoading(false);
+      setProducto({ id: response.id, ...result });      
+      setLoading(false);
+    
+
     } catch (error) {
       console.log(error);
     }
@@ -59,8 +61,8 @@ const useFirebase = () => {
   const generarTicket = async (datos) => {
     try {
       const document = collection(db, "ticket");
-      const orden = await addDoc(document, datos);     
-   
+      const orden = await addDoc(document, datos);   
+      return orden.id;
     } catch (error) {
       console.log(error);
     }
@@ -69,7 +71,6 @@ const useFirebase = () => {
   return {
     data,
     producto,
-    ticket,
     getProductos,
     getProducto,
     updateProducto,

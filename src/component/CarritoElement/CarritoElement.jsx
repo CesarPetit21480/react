@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
-import {CarritoContext} from "../context/CarritoContext";
+import { CarritoContext } from "../../context/CarritoContext";
 import "./CarritoElement.scss";
-const imgRoutes = require.context("../assets/productos", true);
+const imgRoutes = require.context("../../assets/productos", true);
 
 
-const CarritoElement = ({item:{img,description,cantidad,precio,categoria,id}}) => {
+const CarritoElement = ({item:{img,description,cantidad,precio,categoria,id,stock}}) => {
   
 
   const {quitarDelCarrito} = useContext(CarritoContext);
@@ -31,7 +31,7 @@ const CarritoElement = ({item:{img,description,cantidad,precio,categoria,id}}) =
               <div className="col col-5">ARS ${precio}</div>
             </div>
             <button
-              onClick={() => quitarDelCarrito(id)}
+              onClick={() => quitarDelCarrito(id,cantidad,stock)}
               className="btn btn-danger text-uppercase mt-2 w-100">
               <i className="fas fa-trash-alt mx-3"></i>
               eliminar

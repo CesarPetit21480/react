@@ -6,20 +6,20 @@ const imgRoutes = require.context("../../assets/productos", true);
 const ItemDetail = (props) => {
   const { producto } = props;
   const { img, description, precio, stock } = producto;
-  const [count, setCount] = useState(1);
+  const [count, setCount] = useState(0);
   const { addCarrito } = useContext(CarritoContext);
   const [btnActivo, setBtnActivo] = useState(false);
   const [hayEstock, sethayEstock] = useState(0);
 
   const sumar = () => {
-    setCount(count + 1);
+    if (count < stock) setCount(count + 1);
   };
   const restar = () => {
     if (count > 0) setCount(count - 1);
   };
 
   const EstaActivo = () => {
-    if (stock < 0) {
+    if (stock <= 0) {
       setBtnActivo(true);
       sethayEstock(0);
     } else {
@@ -31,7 +31,7 @@ const ItemDetail = (props) => {
   useEffect(() => {
     EstaActivo();
     return () => {};
-  }, []);
+  });
 
   return (
     <div>

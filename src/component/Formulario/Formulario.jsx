@@ -36,7 +36,7 @@ const Input = ({
 
 const Formulario = ({ total, compra }) => {
   const { limpioElCarrito } = useContext(CarritoContext);
-  const { generarTicket, ticket } = useFirebase();
+  const { generarTicket } = useFirebase();
 
   const [formulario, setFormulario] = useState({
     buyer: {
@@ -65,12 +65,16 @@ const Formulario = ({ total, compra }) => {
       });
       return;
     }
-    Swal.fire({
-      title: "Genial!",
-      text: "Su orden de compra se genero correctamente con el numero!",
-      icon: "success",
+
+    generarTicket({ datos: formulario }).then((p) => {
+      console.log("ticket", p);
+      Swal.fire({
+        title: "Genial!",
+        text: `Su orden de compra se genero correctamente con el numero ${p}`,
+        icon: "success",
+      });
     });
-    generarTicket({ datos: formulario });
+
     limpioElCarrito();
   };
 

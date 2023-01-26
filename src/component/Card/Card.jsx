@@ -7,7 +7,12 @@ const imgRoutes = require.context("../../assets/productos", true);
 
 const Card = (props) => {
   const { id, img, description, precio,stock} = props;
-  const { addCarrito } = useContext(CarritoContext);
+  const { addCarrito } = useContext(CarritoContext);  
+
+
+
+  const hayStock = stock>0 ? `STOCK: ${stock}` : `SIN STOCK`
+
 
   const [countItem, setCountItem] = useState(0);
 
@@ -28,7 +33,7 @@ const Card = (props) => {
         <div className="card-body d-flex flex-column align-items-center bodyPropio">
           <h5 className="card-title">{precio} $</h5>
           <h5 className="card-text descripcion">{description}</h5>
-          <h5 className="card-text descripcion">Stock: {stock}</h5>
+          <h5 className="card-text descripcion">{hayStock}</h5>
         </div>
 
         <div className="d-flex justify-content-center mt-1 ">
