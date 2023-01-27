@@ -11,6 +11,7 @@ import GlobalState from "./context/GlobalContext";
 // import {CarritoContext}  from "./context/CarritoContext";
 import { ToastContainer } from "react-toastify";
 import Layout from "./layout/Layout";
+import Footer from "./component/Footer/Footer";
 
 function App() {
   return (
@@ -52,9 +53,11 @@ function App() {
               />
               <Route path="*" element={<Error404 />} />
             </Routes>
-          </Router>
+          </Router>        
           <ToastContainer />
+          <Footer/>
         </Layout>
+     
       </CarritoContextProvider>
     </GlobalState>
   );
