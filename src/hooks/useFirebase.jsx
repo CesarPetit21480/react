@@ -19,12 +19,14 @@ const useFirebase = () => {
 
   const getProductos = async () => {
     try {
+      setLoading(true);
       const data = collection(db, "productos");
       const info = await getDocs(data);
       const response = info.docs.map(
         (doc) => (doc = { id: doc.id, ...doc.data() })
       );
       setData(response);
+      setLoading(false);
     } catch (error) {
       console.log(error);
     }

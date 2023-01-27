@@ -10,48 +10,51 @@ import CarritoContextProvider from "./context/CarritoContext";
 import GlobalState from "./context/GlobalContext";
 // import {CarritoContext}  from "./context/CarritoContext";
 import { ToastContainer } from "react-toastify";
+import Layout from "./layout/Layout";
 
 function App() {
   return (
     <GlobalState>
       <CarritoContextProvider className="App">
-        <Router>
-          <NavBar />
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <ItemListContainer
-                  bienvenida="BIENVENIDO AL PROYECTO"
-                  nombre="CESAR PETIT"
-                  descripcion="Listado Productos"
-                />
-              }
-            />
-            <Route
-              path="/item/:cat"
-              element={
-                <ItemListContainer
-                  bienvenida="BIENVENIDO AL PROYECTO"
-                  nombre="CESAR PETIT"
-                />
-              }
-            />
-            <Route path="/counter" element={<Counter />} />
-            <Route
-              path="/item/detail/:id"
-              // element={<ItemDetailContainer addCarrito={addCarrito} />}
-              element={<ItemDetailContainer />}
-            />
-            <Route
-              path="/carrito/detail"
-              // element={<CarritoDetail carrito={carrito} />}
-              element={<CarritoDetail />}
-            />
-            <Route path="*" element={<Error404 />} />
-          </Routes>
-        </Router>
-        <ToastContainer />
+        <Layout>
+          <Router>
+            <NavBar />
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  <ItemListContainer
+                    bienvenida="BIENVENIDO AL PROYECTO"
+                    nombre="CESAR PETIT"
+                    descripcion="Listado Productos"
+                  />
+                }
+              />
+              <Route
+                path="/item/:cat"
+                element={
+                  <ItemListContainer
+                    bienvenida="BIENVENIDO AL PROYECTO"
+                    nombre="CESAR PETIT"
+                  />
+                }
+              />
+              <Route path="/counter" element={<Counter />} />
+              <Route
+                path="/item/detail/:id"
+                // element={<ItemDetailContainer addCarrito={addCarrito} />}
+                element={<ItemDetailContainer />}
+              />
+              <Route
+                path="/carrito/detail"
+                // element={<CarritoDetail carrito={carrito} />}
+                element={<CarritoDetail />}
+              />
+              <Route path="*" element={<Error404 />} />
+            </Routes>
+          </Router>
+          <ToastContainer />
+        </Layout>
       </CarritoContextProvider>
     </GlobalState>
   );

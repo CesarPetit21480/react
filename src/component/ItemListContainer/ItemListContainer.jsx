@@ -15,9 +15,9 @@ const ItemListContainer = (props) => {
 
   return (
     <div>
-      <h1>{bienvenida}</h1>
+      {/* <h1>{bienvenida}</h1>
       <h2>{nombre}</h2>
-      <h2>{desc.toUpperCase()} </h2>
+      <h2>{desc.toUpperCase()} </h2> */}
       <div className="d-flex justify-content-center flex-wrap">
         {(cat ? data.filter((p) => p.categoria === cat) : data).map(
           ({ id, img, description, precio, stock }, index) => (

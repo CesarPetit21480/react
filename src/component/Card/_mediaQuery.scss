@@ -1,0 +1,32 @@
+        /*vista mobile */
+        
+        @media only screen and (min-width: 0px) and (max-width: 767px) {
+            .cardPropio {
+                color: black;
+                margin-left: 5px;
+                width: 10rem;
+                height: 10rem;
+                margin: 20px;
+                border-radius: 15px;
+                background-image: linear-gradient(to right top, #051937, #003a4e, #2b595b, #5d786a, #909583);
+                border: solid 3px white;
+                box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+                -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+                -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+            }
+            .imgTamanio {
+                width: 300px;
+                height: 300px;
+                margin-top: 30px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+        /*vista tablet */
+        
+        @media only screen and (min-width: 767px) and (max-width: 1024px) {
+            .btnAgregar {
+                padding-left: 100px;
+                padding-right: 100px;
+            }
+        }

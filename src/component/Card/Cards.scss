@@ -43,3 +43,35 @@
     padding-top: 0px;
     margin-top: 0px;
 }
+
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+    .cardPropio {
+        color: black;
+        margin-left: 5px;
+        width: 15rem;
+        height: 15rem;
+        margin: 20px;
+        border-radius: 15px;
+        background-image: linear-gradient(to right top, #051937, #003a4e, #2b595b, #5d786a, #909583);
+        border: solid 3px white;
+        box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+        -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    }
+    .imgTamanio {
+        width: 100px;
+        height: 100px;
+        margin-top: 1px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .boton {
+        background-image: linear-gradient(to right top, #93a6c4, #71a6ba, #5fa3a1, #699c7f, #819060);
+        width: 10rem;
+        height: 3rem;
+        color: white;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        padding-top: 0.5rem;
+        font-size: larger;
+    }
+}
