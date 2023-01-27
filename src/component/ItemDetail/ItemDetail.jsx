@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { CarritoContext } from "../../context/CarritoContext";
-import "./ItemDetail.css";
+import "./ItemDetail.scss";
 const imgRoutes = require.context("../../assets/productos", true);
 
 const ItemDetail = (props) => {
@@ -37,16 +37,16 @@ const ItemDetail = (props) => {
     <div>
       <h1>ELEMENTO SELECCIONADO</h1>
       <div className="d-flex justify-content-center">
-        <div className="card cardPropio ">
+        <div className="card cardPropioDetail ">
           <img
-            className="card-img-top imgTamanio img-thumbnail"
+            className="card-img-top imgTamanio"
             src={imgRoutes(`${img}`)}
             alt="remera"
           />
           <div className="card-body">
             <h5 className="card-title">Stock : {hayEstock} </h5>
             <h5 className="card-title">{precio} $</h5>
-            <p className="card-text">{description}</p>
+            <p className="card-text descripcionDetail">{description}</p>
 
             <div className="d-flex justify-content-center">
               <button className="btn btn-dark" onClick={sumar}>
@@ -62,7 +62,7 @@ const ItemDetail = (props) => {
             <button
               disabled={btnActivo}
               onClick={() => addCarrito(producto, count)}
-              className="btn boton"
+              className="btn botonDetail"
             >
               Agregar Al Carrito
             </button>

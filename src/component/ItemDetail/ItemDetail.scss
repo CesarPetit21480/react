@@ -11,38 +11,42 @@
     border-radius: 10px;
 }
 
-.cardPropio {
+.cardPropioDetail {
     color: black;
     margin-left: 5px;
-    width: 18rem;
-    height: 30rem;
-    margin: 40px;
-    padding: 20px;
+    width: 30rem;
+    height: 40rem;
+    margin: 20px;
+    border-radius: 15px;
+    background-image: linear-gradient(to right top, #051937, #003a4e, #2b595b, #5d786a, #909583);
+    border: solid 3px white;
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
-.boton {
+.descripcionDetail {
+    text-align: center;
+}
+
+.botonDetail {
     background-image: linear-gradient(to right top, #93a6c4, #71a6ba, #5fa3a1, #699c7f, #819060);
-    width: 30rem;
+    width: 20rem;
     height: 3rem;
     color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    padding-top: 0.5rem;
+    margin-bottom: 1rem;
     font-size: larger;
 }
 
 @media only screen and (min-width: 0px) and (max-width: 767px) {
-    .cardPropio {
+    .cardPropioDetail {
         color: black;
         margin-left: 5px;
         width: 15rem;
-        height: 20rem;
-        margin: 20px;
+        height: 25rem;
+        margin: 40px;
         border-radius: 15px;
-        background-image: linear-gradient(to right top, #051937, #003a4e, #2b595b, #5d786a, #909583);
-        border: solid 3px white;
-        box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-        -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-        -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
     }
     .imgTamanio {
         width: 100px;
@@ -51,17 +55,21 @@
         margin-left: auto;
         margin-right: auto;
     }
-    .boton {
-        background-image: linear-gradient(to right top, #93a6c4, #71a6ba, #5fa3a1, #699c7f, #819060);
-        width: 10rem;
-        height: 3rem;
-        color: white;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-        padding-top: 0.5rem;
-        font-size: larger;
-    }
     .descripcion {
         text-align: center;
+        font-size: small;
+    }
+    .descripcionDetail {
+        text-align: center;
+        font-size: small;
+    }
+    .botonDetail {
+        background-image: linear-gradient(to right top, #93a6c4, #71a6ba, #5fa3a1, #699c7f, #819060);
+        width: 10rem;
+        height: 2rem;
+        color: white;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        margin-bottom: 1rem;
         font-size: small;
     }
 }

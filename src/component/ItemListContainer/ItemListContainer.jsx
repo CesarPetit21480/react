@@ -14,7 +14,7 @@ const ItemListContainer = (props) => {
   }, []);
 
   return (
-    <div>
+    <div className="container">
       {/* <h1>{bienvenida}</h1>
       <h2>{nombre}</h2>
       <h2>{desc.toUpperCase()} </h2> */}
@@ -33,7 +33,7 @@ const ItemListContainer = (props) => {
         )}
       </div>
     </div>
-  );
+  )
 };
 
 export default ItemListContainer;
